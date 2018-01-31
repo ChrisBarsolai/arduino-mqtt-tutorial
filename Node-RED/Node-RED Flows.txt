@@ -1,0 +1,446 @@
+[
+    {
+        "id": "8666d145.dcc0b",
+        "type": "tab",
+        "label": "Arduino-MQTT Tutorial",
+        "disabled": false,
+        "info": "# Description\n\nThis Node-RED flow illustrates ability to subscribe to an MQTT topic via a broker using an MQTT node,\nand utilises Node-RED Dashboard to provide a comprehensive set of UI components for building basic dashboards suitable for the Internet of Things (IoT) \n\n# Dependencies\n\n1. **MQTT:** npm install node-red-contrib-mqtt-broker\n\n2. **Node-RED Dashboard:** npm install node-red-dashboard"
+    },
+    {
+        "id": "d93bcd35.7638a",
+        "type": "mqtt in",
+        "z": "8666d145.dcc0b",
+        "name": "Temperature MQTT",
+        "topic": "arduinomqtt/temperature",
+        "qos": "2",
+        "broker": "4f5b2fc7.2a7ea",
+        "x": 136,
+        "y": 333,
+        "wires": [
+            [
+                "ab62fafa.830a98",
+                "6e9dfd20.215634",
+                "3208fa2b.9c6c76",
+                "88189e1f.1967f"
+            ]
+        ]
+    },
+    {
+        "id": "61df715b.1c288",
+        "type": "mqtt in",
+        "z": "8666d145.dcc0b",
+        "name": "Humidity MQTT",
+        "topic": "arduinomqtt/humidity",
+        "qos": "2",
+        "broker": "4f5b2fc7.2a7ea",
+        "x": 129,
+        "y": 436,
+        "wires": [
+            [
+                "ab62fafa.830a98",
+                "6817cdfc.dce234",
+                "f23b1a42.bc5f48"
+            ]
+        ]
+    },
+    {
+        "id": "ab62fafa.830a98",
+        "type": "debug",
+        "z": "8666d145.dcc0b",
+        "name": "Debug Tab",
+        "active": true,
+        "console": "false",
+        "complete": "payload",
+        "x": 698,
+        "y": 364,
+        "wires": []
+    },
+    {
+        "id": "a58b8ab4.1d8568",
+        "type": "comment",
+        "z": "8666d145.dcc0b",
+        "name": "MQTT In: Temp & Humidity",
+        "info": "",
+        "x": 387.5,
+        "y": 55,
+        "wires": []
+    },
+    {
+        "id": "6e9dfd20.215634",
+        "type": "ui_text",
+        "z": "8666d145.dcc0b",
+        "group": "5465b3e3.1ebc4c",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "Temperature",
+        "label": "Temp (Celcius): ",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "x": 688,
+        "y": 146,
+        "wires": []
+    },
+    {
+        "id": "3208fa2b.9c6c76",
+        "type": "ui_chart",
+        "z": "8666d145.dcc0b",
+        "name": "Chart",
+        "group": "5465b3e3.1ebc4c",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "Temperature",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "bezier",
+        "nodata": "",
+        "dot": true,
+        "ymin": "0",
+        "ymax": "40",
+        "removeOlder": "1",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "x": 674,
+        "y": 213,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "88189e1f.1967f",
+        "type": "ui_gauge",
+        "z": "8666d145.dcc0b",
+        "name": "Gauge",
+        "group": "5465b3e3.1ebc4c",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Gauge",
+        "label": "celcius",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "40",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 679,
+        "y": 274,
+        "wires": []
+    },
+    {
+        "id": "6817cdfc.dce234",
+        "type": "ui_text",
+        "z": "8666d145.dcc0b",
+        "group": "d210d06e.ee18e",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "Humidity",
+        "label": "Humidity (Absolute): ",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "x": 704,
+        "y": 454,
+        "wires": []
+    },
+    {
+        "id": "f23b1a42.bc5f48",
+        "type": "ui_chart",
+        "z": "8666d145.dcc0b",
+        "name": "Chart",
+        "group": "d210d06e.ee18e",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "bezier",
+        "nodata": "",
+        "dot": true,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "1",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "x": 700,
+        "y": 511,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "6c7f9823.9adbe8",
+        "type": "comment",
+        "z": "8666d145.dcc0b",
+        "name": "MQTT Out: LED",
+        "info": "This section sends messages to the LLED MQTT topic",
+        "x": 419,
+        "y": 668,
+        "wires": []
+    },
+    {
+        "id": "8aaa3bb2.855248",
+        "type": "ui_text",
+        "z": "8666d145.dcc0b",
+        "group": "baa02d5d.5918",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "Color Picker",
+        "label": "Choose a Colour",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 110,
+        "y": 782,
+        "wires": []
+    },
+    {
+        "id": "26fe4d5d.28aa92",
+        "type": "ui_button",
+        "z": "8666d145.dcc0b",
+        "name": "Red Button",
+        "group": "baa02d5d.5918",
+        "order": 0,
+        "width": "2",
+        "height": "1",
+        "passthru": false,
+        "label": "Red",
+        "color": "#000000",
+        "bgcolor": "#ff4242",
+        "icon": "",
+        "payload": "R",
+        "payloadType": "str",
+        "topic": "",
+        "x": 113,
+        "y": 846,
+        "wires": [
+            [
+                "aa306bc3.5b9b98"
+            ]
+        ]
+    },
+    {
+        "id": "aa306bc3.5b9b98",
+        "type": "mqtt out",
+        "z": "8666d145.dcc0b",
+        "name": "LED Change",
+        "topic": "arduinomqtt/LEDchange",
+        "qos": "",
+        "retain": "",
+        "broker": "4f5b2fc7.2a7ea",
+        "x": 716,
+        "y": 910,
+        "wires": []
+    },
+    {
+        "id": "e913eac9.4a6468",
+        "type": "ui_button",
+        "z": "8666d145.dcc0b",
+        "name": "Green Button",
+        "group": "baa02d5d.5918",
+        "order": 0,
+        "width": "2",
+        "height": "1",
+        "passthru": false,
+        "label": "Green",
+        "color": "#000000",
+        "bgcolor": "#66ff75",
+        "icon": "",
+        "payload": "G",
+        "payloadType": "str",
+        "topic": "",
+        "x": 113,
+        "y": 896,
+        "wires": [
+            [
+                "aa306bc3.5b9b98"
+            ]
+        ]
+    },
+    {
+        "id": "27fc8fca.96387",
+        "type": "ui_button",
+        "z": "8666d145.dcc0b",
+        "name": "Blue Button",
+        "group": "baa02d5d.5918",
+        "order": 0,
+        "width": "2",
+        "height": "1",
+        "passthru": false,
+        "label": "Blue",
+        "color": "#000000",
+        "bgcolor": "#66d8ff",
+        "icon": "",
+        "payload": "B",
+        "payloadType": "str",
+        "topic": "",
+        "x": 109,
+        "y": 954,
+        "wires": [
+            [
+                "aa306bc3.5b9b98"
+            ]
+        ]
+    },
+    {
+        "id": "460d1798.b630a8",
+        "type": "ui_text",
+        "z": "8666d145.dcc0b",
+        "group": "baa02d5d.5918",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "Seperator",
+        "label": " ",
+        "format": "{{msg.payload}}",
+        "layout": "row-center",
+        "x": 99,
+        "y": 1014,
+        "wires": []
+    },
+    {
+        "id": "49f8824.4a3c07c",
+        "type": "mqtt in",
+        "z": "8666d145.dcc0b",
+        "name": "Current LED State",
+        "topic": "arduinomqtt/LEDstate",
+        "qos": "2",
+        "broker": "4f5b2fc7.2a7ea",
+        "x": 132,
+        "y": 1106,
+        "wires": [
+            [
+                "5360d0d6.f26ca"
+            ]
+        ]
+    },
+    {
+        "id": "5360d0d6.f26ca",
+        "type": "ui_text",
+        "z": "8666d145.dcc0b",
+        "group": "2e1e677f.2cc1c8",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "Current LED State",
+        "label": "Current LED State: ",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "x": 716,
+        "y": 1106,
+        "wires": []
+    },
+    {
+        "id": "4f5b2fc7.2a7ea",
+        "type": "mqtt-broker",
+        "z": "",
+        "broker": "broker.mqtt-dashboard.com",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": ""
+    },
+    {
+        "id": "5465b3e3.1ebc4c",
+        "type": "ui_group",
+        "z": "",
+        "name": "Temperature",
+        "tab": "46fdcaeb.06b9f4",
+        "order": 2,
+        "disp": true,
+        "width": "6"
+    },
+    {
+        "id": "d210d06e.ee18e",
+        "type": "ui_group",
+        "z": "",
+        "name": "Humidity",
+        "tab": "46fdcaeb.06b9f4",
+        "order": 3,
+        "disp": true,
+        "width": "6"
+    },
+    {
+        "id": "baa02d5d.5918",
+        "type": "ui_group",
+        "z": "",
+        "name": "LED Buttons",
+        "tab": "a45674e3.87e568",
+        "order": 1,
+        "disp": true,
+        "width": "6"
+    },
+    {
+        "id": "2e1e677f.2cc1c8",
+        "type": "ui_group",
+        "z": "",
+        "name": "Current LED State",
+        "tab": "a45674e3.87e568",
+        "order": 2,
+        "disp": true,
+        "width": "6"
+    },
+    {
+        "id": "46fdcaeb.06b9f4",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Temp & Humidity",
+        "icon": "dashboard",
+        "order": 1
+    },
+    {
+        "id": "a45674e3.87e568",
+        "type": "ui_tab",
+        "z": "",
+        "name": "LED Changes",
+        "icon": "dashboard",
+        "order": 2
+    }
+]
