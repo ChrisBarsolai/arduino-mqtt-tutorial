@@ -1,6 +1,6 @@
 /*
 
-This sketch aims at publishing temperature sensor readings to an MQTT topic in relatime. 
+This sketch aims at publishing temperature and humidity sensor readings to an MQTT topic in realtime. 
 It also subscribes the NodeMCU to a topic, wherein the message received on the topic
 changes the RGD LED colors based on the message character.
 
