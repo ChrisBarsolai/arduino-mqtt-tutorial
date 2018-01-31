@@ -189,7 +189,6 @@ void reconnect() {
 
 
 
-// The 
 void loop() {
 
 	long sendMsg = millis();
@@ -210,22 +209,15 @@ void loop() {
 	      return;
 	    }
 
-	    /*
-	    static char temperatureTemp[7];
-	    dtostrf(temp, 6, 2, temperatureTemp);
-
-	    static char humidityTemp[7];
-	    dtostrf(humidity, 6, 2, humidityTemp);
-	    */
 
 
-	  	if (!client.connected()) {
+	    if (!client.connected()) {
 	    	reconnect();
-	  	}
+	    }
 	  	client.loop();
 
-	  	// Publish Temperature and Humidity values to MQTT Topic
-	  	// To view the published values, use MQTTBox and subscribe to the topics after setting up the broker credentials
+	    // Publish Temperature and Humidity values to MQTT Topic
+	    // To view the published values, use MQTTBox and subscribe to the topics after setting up the broker credentials
 	    client.publish("arduinomqtt/temperature", temp);
 	    client.publish("arduinomqtt/humidity", humidity);
 
