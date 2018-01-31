@@ -115,7 +115,7 @@ We will use Node-RED to subscribe to an MQTT topic via a broker using an MQTT no
 
 ![mqtt in](https://user-images.githubusercontent.com/14905480/35629653-359cfb5a-06b0-11e8-8baf-62480afe233e.png)
 
-I have provided a Node-RED file in this repository that enables you to replicate the flow of nodes I had created for this tutorial. Import it into your clipboard and Deploy. Then head over to <http:// localhost:1880/ui/> to view the UI components.
+I have provided a Node-RED file in this repository that enables you to replicate the flow of nodes I had created for this tutorial. Import it into your clipboard and Deploy. Then head over to <http://localhost:1880/ui> to view the UI components.
 
 ![dashboard](https://user-images.githubusercontent.com/14905480/35630172-bb2f19dc-06b1-11e8-8f63-f6ca49ab34cc.png)
 
