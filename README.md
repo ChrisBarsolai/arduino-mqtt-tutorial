@@ -1,5 +1,5 @@
 # arduino-mqtt-tutorial
-A comprehensive tutorial on getting started with MQTT protocol using NodeMCU, MQTTBox and Node-RED
+A comprehensive tutorial on getting started with MQTT protocol using **NodeMCU**, **MQTTBox** and **Node-RED**.
 
 This tutorial will get you started on working with the NodeMCU, and using MQTT protocol to publish data (messages) it accrues from the sensors wirelessly to an MQTT topic the NodeMCU is subscribed to.
 We will additionally use the MQTTBox and Node-RED as the MQTT clients, to check on the published messages and additionally make changes to the hardware remotely.
