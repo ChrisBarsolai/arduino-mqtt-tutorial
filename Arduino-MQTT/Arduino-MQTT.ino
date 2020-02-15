@@ -152,7 +152,7 @@ void callback(char* topic, byte* payload, unsigned int length) {
   }
 
   // Switch on Blue LED if an 'B' was received as first character
-  if ((char)payload[0] == 'G') {
+  if ((char)payload[0] == 'B') {
 	digitalWrite(RED_PIN, LOW);
 	digitalWrite(GREEN_PIN, LOW);
 	digitalWrite(BLUE_PIN, HIGH);
